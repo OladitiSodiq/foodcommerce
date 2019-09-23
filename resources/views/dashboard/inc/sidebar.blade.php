@@ -17,7 +17,7 @@
               <li><a href="#my-orders" data-toggle="tab"><i class="fa fa-shopping-basket"></i> MY ORDERS</a></li>
               <li><a href="#shortlists" data-toggle="tab"><i class="fa fa-heart"></i> SHORTLISTS</a></li>
               <li><a href="#statement" data-toggle="tab"><i class="fa fa-wpforms"></i> STATEMENT</a></li>
-              <li><a href="/dashboard/add-new-product" ><i class="fa fa-cog"></i> Add Food</a></li>
+              <li><a href="/add-new-product" ><i class="fa fa-cog"></i> Add Food</a></li>
           </ul>
           @endif
 

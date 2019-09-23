@@ -70,6 +70,7 @@ Route::group(['middleware' => ['isAdmin', 'IsValidUser']], function () {
   // Route::fallback(function () {
   //   return response()->view('dashboard.404', [], 404);
   // });
-  Route::get('/redirect', 'UserController@redirectToProvider');
-  Route::get('/callback', 'UserController@handleProviderCallback');
+
 });
+Route::get('/login/{provider}', 'UserController@redirectToProvider');
+Route::get('/login/{provider}/callback', 'UserController@handleProviderCallback');

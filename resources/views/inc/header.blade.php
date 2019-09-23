@@ -112,7 +112,15 @@
                               </li>
                               <li><a href="contact.html" title="CONTACT US" itemprop="url"><span class="red-clr">REAL FOOD</span>CONTACT US</a></li>
                           </ul>
+                          @if(!Session::get('username'))
                           <a class="red-bg brd-rd4" href="/register" title="Register" itemprop="url">REGISTER RESTAURANT</a>
+                          @endif
+
+                          @if(Session::get('username'))
+                          <a class="red-bg brd-rd4" >  <i class="fa fa-heart-o"></i>
+                            <span>Your Wishlist</span></a>
+                         
+                          @endif
                       </div>
                   </nav><!-- Navigation -->
               </div>

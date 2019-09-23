@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Session;
+use Socialite;
+use Exception;
+
 use DB;
 use Illuminate\Support\Facades\Redirect;
 
@@ -96,36 +99,46 @@ class UserController extends Controller
     return redirect('/');
   }
 
-  public function redirectToProvider()
+  public function redirectToProvider($provider)
   {
-    return Socialite::driver('google')->redirect();
+    return Socialite::driver($provider)->redirect();
   }
 
-  public function handleProviderCallback()
+  public function handleProviderCallback($provider)
   {
     try {
-      $user = Socialite::driver('google')->user();
+      $user = Socialite::driver($provider)->stateless()->user();
+
+      // return $user->token;
     } catch (\Exception $e) {
-      return redirect('/home');
+      return redirect('/login');
     }
     //only worked for those who have company email
+    $authuser = $this->findorcreateuser($user, $provider);
+    Auth::login($authuser, true);
+    return redirect($this->redirectTo);
+
     if (explode("@", $user->email)[1] !== 'gmail.com') {
       return redirect()->to('/');
     }
+  }
+  public function findorcreateuser($providerUser, $provider)
+  {
     //check if existing user 
-    $existinguser = User::where('email', $user->email)->first();
+    $existinguser = User::where('email', $providerUser->email)->first();
+
     if ($existinguser) {
       //log im
-      login($existinguser, true);
+      return $existinguser->user;
     } else {
       //create new user
-      $newUser = new User();
-      $newUser->name = $user->name;
-      $newUser->email = $user->email;
-      $newUser->google_id = $user->id;
-      $newUser->avatar = $user->avatar;
-      $newUser->avatar_original = $user->avatar_original;
-      $newUser->save();
+      // $newUser = new User();
+      // $newUser->name = $user->name;
+      // $newUser->email = $user->email;
+      // $newUser->google_id = $user->id;
+      // $newUser->avatar = $user->avatar;
+      // $newUser->avatar_original = $user->avatar_original;
+      // $newUser->save();
     }
   }
 }

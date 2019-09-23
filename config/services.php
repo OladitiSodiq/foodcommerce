@@ -13,13 +13,16 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
+  'github' => [
+    'client_id' => 'Iv1.8b0f5515eba8ca22',
+    'client_secret' => 'cb20f8f4b023514b8cbf840804c4ceb1eecca9e3',
+    'redirect' => 'http://localhost:8000/callback',
+  ],
 
   'google' => [
-    'client_id' => env('sDei7L3gQDG8bNwBUcbzdERK'),
-    // 'client_id' => env('Iv1.8b0f5515eba8ca22'),
-    // 'client_secret' => env('cb20f8f4b023514b8cbf840804c4ceb1eecca9e3'),
-    'client_secret' => env('503255649872-cd4f9g6st3i8l8c3ijqd5pb4a4r82v5a.apps.googleusercontent.com'),
-    'redirect' => 'http://127.0.0.1:8000/callback',
+    'client_id' => '503255649872-cd4f9g6st3i8l8c3ijqd5pb4a4r82v5a.apps.googleusercontent.com',
+    'client_secret' => 'sDei7L3gQDG8bNwBUcbzdERK',
+    'redirect' => 'http://localhost:8000/callback/google',
   ],
 
   'mailgun' => [

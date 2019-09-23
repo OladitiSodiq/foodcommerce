@@ -66,17 +66,19 @@
                 <a class="sign-btn" href="#" title="" itemprop="url">Not a member? Sign up</a>
                 <a class="recover-btn" href="#" title="" itemprop="url">Recover my password</a>
             </div>
-            <div class="sign-popup-title text-center">
+            
+    </form>
+    <div class="sign-popup-title text-center">
                 <h4 itemprop="headline">SIGN UP</h4>
                 <span>with your social network</span>
             </div>
             <div class="popup-social text-center">
-                <a class="facebook brd-rd3" href="{{url('/redirect')}}" title="Facebook" itemprop="url" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
-                <a class="google brd-rd3" href="#" title="Google Plus" itemprop="url" target="_blank"><i class="fa fa-google-plus"></i> Google</a>
-                <a class="twitter brd-rd3" href="#" title="Twitter" itemprop="url" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                <a class="facebook brd-rd3" href="{{url('/login/facebook')}}" title="Facebook" itemprop="url" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                <a class="google brd-rd3" href="{{url('/login/google')}}" title="Google Plus" itemprop="url" target="_blank"><i class="fa fa-google-plus"></i> Google</a>
+                <a class="twitter brd-rd3" href="{{url('/login/twitter')}}" title="Twitter" itemprop="url" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                <a class="github brd-rd3" href="{{url('/login/github')}}" title="Github" itemprop="url" target="_blank"><i class="fa fa-github"></i> Github</a>
             </div>
             <span class="popup-seprator text-center"><i class="brd-rd50">or</i></span>
-    </form>
                 </div>
             </div>
         </section>

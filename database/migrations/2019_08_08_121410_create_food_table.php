@@ -24,6 +24,7 @@ class CreateFoodTable extends Migration
       $table->string('category')->nullable();
       $table->string('views')->nullable();
       $table->string('image')->nullable();
+      $table->timestamps();
     });
   }
 

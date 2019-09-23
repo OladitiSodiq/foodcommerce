@@ -233,16 +233,17 @@
                                                       <h4 itemprop="headline"><a  title="" itemprop="url">
                                                         {{ $product->short_desc }}</a>
                                                       </h4>
-                                                      <p itemprop="description">{{ $product->full_desc }}</p>
+                                                      {{-- <p itemprop="description">{{ $product->full_desc }}</p> --}}
                                                       <span class="price">${{ $product->full_price }}</span>
-                                                      <a class="brd-rd2" href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
-                                                      <div class="restaurant-info">
+                                                      <button class="red-bg brd-rd4"  title="Order Now" onclick="addItemToWishlist( {{ $product->id }} )">Order Now</button>
+                                                      {{-- <div class="restaurant-info">
                                                           <img src="assets/images/resource/restaurant-logo1.png" alt="restaurant-logo1.png" itemprop="image">
                                                           <div class="restaurant-info-inner">
-                                                              <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">{{ $product->rest_name }}</a></h6>
-                                                              <span class="red-clr">{{ $product->rest_addr }}</span>
-                                                          </div>
-                                                      </div>
+                                                              {{-- <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">{{ $product->rest_name }}</a></h6>
+                                                              <span class="red-clr">{{ $product->rest_addr }}</span> --}}
+                                                          {{-- </div> --}}
+                                                      {{-- </div> --}} 
+                                                    
                                                   </div>
                                               </div><!-- Popular Dish Box -->
                                           </div>
