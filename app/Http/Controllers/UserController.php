@@ -141,4 +141,9 @@ class UserController extends Controller
       // $newUser->save();
     }
   }
+
+  public function idd()
+  {
+    return redirect('/login');
+  }
 }

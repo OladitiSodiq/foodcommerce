@@ -235,7 +235,8 @@
                                                       </h4>
                                                       {{-- <p itemprop="description">{{ $product->full_desc }}</p> --}}
                                                       <span class="price">${{ $product->full_price }}</span>
-                                                      <button class="red-bg brd-rd4"  title="Order Now" onclick="addItemToWishlist( {{ $product->id }} )">Order Now</button>
+                                                     
+                                                      <a href="/order/{{ $product->id }}"><button class="btn btn-success red-bg brd-rd4">View Price</button></a>
                                                       {{-- <div class="restaurant-info">
                                                           <img src="assets/images/resource/restaurant-logo1.png" alt="restaurant-logo1.png" itemprop="image">
                                                           <div class="restaurant-info-inner">

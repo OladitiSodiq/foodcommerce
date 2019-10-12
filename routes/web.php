@@ -74,3 +74,4 @@ Route::group(['middleware' => ['isAdmin', 'IsValidUser']], function () {
 });
 Route::get('/login/{provider}', 'UserController@redirectToProvider');
 Route::get('/login/{provider}/callback', 'UserController@handleProviderCallback');
+Route::get('/order/{id}', 'UserController@idd');
